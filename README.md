@@ -1,9 +1,7 @@
 # Capture-24 CATD reproducibility code
 
 This repository contains only the code and run instructions used for the
-Capture-24 CATD experiments. It intentionally does **not** include the paper,
-figures, result tables, raw Capture-24 data, prediction files, or manuscript
-artifacts.
+Capture-24 CATD experiments. 
 
 ## What is included
 

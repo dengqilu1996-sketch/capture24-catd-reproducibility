@@ -29,8 +29,9 @@ The official Capture-24 implementation is included as a Git submodule at
 `f861b44f5675cb3e8294cd3d560d7a71a749616f` from
 https://github.com/OxWearables/capture24.
 
-Download the raw Capture-24 release from the Oxford data record referenced by
-the official repository. Raw data are not redistributed here.
+Download the raw Capture-24 release from the Oxford data record
+(https://ora.ox.ac.uk/objects/uuid:99d7c092-d865-4a19-b096-cc16440cd001).
+Raw data are not redistributed here.
 
 ## Reproduction outline
 

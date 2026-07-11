@@ -1,0 +1,11 @@
+configs/paths.capture24.yaml
+data/
+results/
+logs/
+paper_artifacts/
+*.npz
+*.pkl
+*.pickle
+__pycache__/
+*.pyc
+.venv/

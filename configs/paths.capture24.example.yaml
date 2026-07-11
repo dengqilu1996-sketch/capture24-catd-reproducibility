@@ -1,0 +1,21 @@
+# Copy to configs/paths.capture24.yaml and edit paths for the local machine.
+# Run all scripts from the repository root.
+
+project_root: "."
+capture24_raw_data: "data/raw/capture24"
+capture24_official_code: "capture24_project/official_code/capture24"
+prepared_data: "data/prepared_data_official_repro"
+prepared_data_regenerated: "data/prepared_data_official_repro"
+baseline_results: "results/baselines"
+bcm_results: "results/bcm"
+logs: "logs"
+
+split:
+  derivation: "P001-P100"
+  test: "P101-P151"
+
+default_labels:
+  - "Walmsley2020"
+  - "WillettsSpecific2018"
+
+default_window_seconds: 10

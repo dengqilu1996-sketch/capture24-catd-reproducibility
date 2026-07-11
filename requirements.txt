@@ -1,0 +1,10 @@
+# Minimal runtime dependencies for the CATD wrappers.
+# The official Capture-24 environment files are retained alongside this file.
+numpy==1.22.3
+pandas==2.2.3
+PyYAML==6.0.1
+scikit-learn==1.5.2
+imbalanced-learn==0.12.4
+xgboost==2.1.1
+joblib==1.4.2
+tqdm==4.67.0

@@ -1,0 +1,3 @@
+[submodule "capture24_project/official_code/capture24"]
+	path = capture24_project/official_code/capture24
+	url = https://github.com/OxWearables/capture24.git

@@ -1,0 +1,60 @@
+# Consolidated settings used for the revision audits.
+window_seconds: 10
+split:
+  mapping_and_transition: P001-P080
+  validation: P081-P100
+  locked_test: P101-P151
+features:
+  extractor: official_capture24_current
+  n_features: 32
+  labels: [WillettsSpecific2018, Walmsley2020, MET_intensity4]
+catd_heads:
+  principal_capture24: {fine: rf_rfcompat_xgbopt_full, coarse: rf_rfcompat_xgbopt_full, intensity: auxiliary_xgb}
+  external_pamap2: {fine: BalancedRandomForestClassifier, coarse: BalancedRandomForestClassifier, intensity: BalancedRandomForestClassifier}
+rf:
+  classifier: imblearn.ensemble.BalancedRandomForestClassifier
+  n_estimators: 3000
+  bootstrap: true
+  replacement: true
+  sampling_strategy: not minority
+  oob_score: true
+  max_features: sqrt
+  n_jobs: 12
+  random_state: 42
+  max_depth_grid: {start: 5, stop: 30, step: 1}
+  min_samples_split_grid: [2, 5, 10, 20]
+  min_samples_leaf_grid: [1, 2, 4, 8]
+  max_features_grid: [sqrt, log2, 0.5, 0.8]
+  min_weight_fraction_leaf_range: [0.0, 0.3]
+  max_leaf_nodes_grid: [null, 10, 50, 100]
+  hyperopt_evaluations: 100
+  hyperopt_seed: 42
+catd:
+  alpha_grid: [0, 0.25, 0.5, 1]
+  beta_grid: [0, 0.25, 0.5, 1]
+  gamma_grid: [0, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10]
+  macro_f1_retention: 0.95
+  additive_smoothing: 0.001
+  probability_floor: 1.0e-12
+  bootstrap_resamples: 5000
+  bootstrap_seed: 20260630
+structured_crf:
+  windows_per_participant: 200
+  sampling: evenly_spaced_chronological
+  algorithm: lbfgs
+  c1: 0.1
+  c2: 0.1
+  max_iterations: 50
+deep_audits:
+  epochs: 8
+  train_participants: P001-P080
+  validation_participants: P081-P100
+  locked_test_participants: P101-P151
+software:
+  python: 3.11.15
+  numpy: 2.4.6
+  pandas: 2.2.3
+  scikit_learn: 1.5.2
+  imbalanced_learn: 0.14.2
+  xgboost: 3.2.0
+  sklearn_crfsuite: 0.5.0
